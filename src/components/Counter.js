@@ -6,8 +6,12 @@ const Counter = () => {
 
   const counter = useSelector((state)=>state.counter.counter);
 
+ const show = useSelector((state)=>state.counter.showCounter);
 
-  
+ const toggleCounterHandler = () =>{
+    
+ }
+
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
