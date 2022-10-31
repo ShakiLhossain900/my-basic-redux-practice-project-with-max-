@@ -1,11 +1,11 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, configureStore} from '@reduxjs/toolkit';
 
 //creating the store 
 
 //redux toolkit counter 
 const initailConterState={counter:0, showCounter:true};
 
-const counterSlice =({
+const counterSlice =createSlice({
     name: 'counter',
     initialState: initailConterState, 
 
@@ -23,6 +23,23 @@ const counterSlice =({
             state.showCounter= !state.showCounter
         }
         
+    }
+});
 
+
+//redux toolkit authentication
+
+//redux toolkit automatic create the action to dispatch actions
+const store = configureStore({
+    reducer: {
+        counter:counterSlice.reducer,
     }
 })
+
+
+
+
+
+
+
+
