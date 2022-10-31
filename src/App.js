@@ -17,3 +17,7 @@ const isAuth =  useSelector(state=>state.auth.isAuthenticated);
 }
 
 export default App;
+
+
+
+//finally done the practice project with max
