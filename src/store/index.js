@@ -6,7 +6,7 @@ import {createSlice, configureStore} from '@reduxjs/toolkit';
 const initailConterState={counter:0, showCounter:true};
 
 const counterSlice =createSlice({
-    name: 'counter',
+    name: "counter",
     initialState: initailConterState, 
 
     reducers:{
@@ -21,21 +21,39 @@ const counterSlice =createSlice({
         },
         toggleCounter(state){
             state.showCounter= !state.showCounter
-        }
+        },
         
-    }
+    },
 });
 
+//redux toolkit authentication
+const initailAuthenState = {
+    isAuthenticated: false,
+}
+const authSlice =createSlice({
+    name:'authentication',
+    initialState: initailAuthenState,
+    reducers:{
+        login(state){
+            state.isAuthenticated = true;
+        },
+        logout(state){
+            state.isAuthenticated = false;
+        },
+    }, 
+});
 
 
 //redux toolkit automatic create the action to dispatch actions
 const store = configureStore({
     reducer: {
         counter:counterSlice.reducer,
+        auth:authSlice.reducer,
     }
 })
 
-export const counterAction = counterSlice.action;
+export const counterAction = counterSlice.actions;
+
 export default store;
 
 
