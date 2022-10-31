@@ -27,7 +27,6 @@ const counterSlice =createSlice({
 });
 
 
-//redux toolkit authentication
 
 //redux toolkit automatic create the action to dispatch actions
 const store = configureStore({
@@ -36,6 +35,8 @@ const store = configureStore({
     }
 })
 
+export const counterAction = counterSlice.action;
+export default store;
 
 
 
